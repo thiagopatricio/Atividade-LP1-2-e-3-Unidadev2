@@ -1,0 +1,8 @@
+3
+São Paulo 0
+Rio de Janeiro 0
+Belo Horizonte 1
+3
+São Paulo Rio de Janeiro T 400
+Rio de Janeiro Belo Horizonte T 450
+São Paulo Belo Horizonte T 580
