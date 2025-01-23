@@ -12,8 +12,6 @@ além de **simular viagens** (com uma ou mais conexões) e gerar **relatórios**
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Como Compilar e Executar](#como-compilar-e-executar)
 - [Exemplo de Uso](#exemplo-de-uso)
-- [Possíveis Extensões](#possíveis-extensões)
-- [Licença](#licença)
 
 ---
 
