@@ -1,96 +1,96 @@
-Sistema Controlador de Viagens
-Este projeto em C++ implementa um Sistema de Controle de Viagens entre cidades, com foco em programação orientada a objetos.
-Ele permite cadastrar cidades, trajetos, transportes e passageiros,
-além de simular viagens (com uma ou mais conexões) e gerar relatórios.
+# Sistema Controlador de Viagens
 
-Índice
-Funcionalidades Principais
-Estrutura do Projeto
-Como Compilar e Executar
-Exemplo de Uso
-Possíveis Extensões
-Licença
-Funcionalidades Principais
-Cadastro de Cidades
+Este projeto em C++ implementa um **Sistema de Controle de Viagens** entre cidades, com foco em **programação orientada a objetos**.  
+Ele permite **cadastrar cidades**, **trajetos**, **transportes** e **passageiros**,  
+além de **simular viagens** (com uma ou mais conexões) e gerar **relatórios**.
 
-Inclui nome e um contador de visitas (para estatísticas de cidades mais procuradas).
-Cadastro de Trajetos
+---
 
-Associar uma cidade de origem a outra de destino, informando:
-Tipo de trajeto ('T' para terrestre ou 'A' para aquático).
-Distância em quilômetros.
-Cadastro de Transportes
+## Índice
 
-Nome,
-Tipo ('T' ou 'A'),
-Capacidade de passageiros,
-Velocidade (km/h),
-Distância entre descansos (km),
-Tempo de descanso (horas),
-Cidade inicial (localização atual).
-Cadastro de Passageiros
+- [Funcionalidades Principais](#funcionalidades-principais)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Compilar e Executar](#como-compilar-e-executar)
+- [Exemplo de Uso](#exemplo-de-uso)
+- [Possíveis Extensões](#possíveis-extensões)
+- [Licença](#licença)
 
-Nome,
-Cidade onde o passageiro se encontra atualmente.
-Gestão de Viagens
+---
 
-Iniciar viagens informando:
-Transporte a ser utilizado,
-Lista de passageiros,
-Cidade de origem e destino.
-Calcular o melhor caminho (via Dijkstra simples) para percorrer o trajeto desejado (com possíveis conexões).
-Avançar horas para simular a viagem:
-Cálculo de distância percorrida.
-Verificação de paradas de descanso e tempo de descanso.
-Registro de chegada ao destino e cidades visitadas.
-Relatórios
+## Funcionalidades Principais
 
-Onde estão cada passageiro e transporte (em cidade ou em trânsito).
-Quais viagens estão em andamento ou concluídas.
-Cidades mais visitadas.
-Persistência de Dados (Básica)
+1. **Cadastro de Cidades**  
+   - Inclui nome e um contador de visitas (para estatísticas de cidades mais procuradas).
 
-Métodos para salvar e carregar dados em arquivos texto.
-Fácil de expandir para salvar/caregar toda a estrutura do sistema.
-Estrutura do Projeto
-css
-Copiar
-.
-├── main.cpp
-├── Cidade.h
-├── Cidade.cpp
-├── Trajeto.h
-├── Trajeto.cpp
-├── Transporte.h
-├── Transporte.cpp
-├── Passageiro.h
-├── Passageiro.cpp
-├── Viagem.h
-├── Viagem.cpp
-├── ControladorDeTransito.h
-├── ControladorDeTransito.cpp
-└── README.md  <-- Este arquivo
-Classes
-Cidade: Nome da cidade e um contador de visitas (para relatórios de popularidade).
-Trajeto: Ligação entre duas cidades, com tipo ('T' ou 'A') e distância.
-Transporte: Informações sobre capacidade, velocidade, paradas de descanso e cidade atual.
-Passageiro: Nome e localização atual.
-Viagem: Gerencia a simulação do transporte em um trajeto específico (ou em conexões).
-ControladorDeTransito: Classe-fachada que agrega todas as entidades e gerencia suas interações (cadastro, busca, viagens, relatórios, persistência etc.).
-Como Compilar e Executar
-Compilação via linha de comando (g++)
+2. **Cadastro de Trajetos**  
+   - Associar uma cidade de origem a outra de destino, informando:  
+     - Tipo de trajeto (`'T'` para terrestre ou `'A'` para aquático).  
+     - Distância em quilômetros.
 
-bash
-Copiar
-g++ main.cpp \
-    Cidade.cpp \
-    Trajeto.cpp \
-    Transporte.cpp \
-    Passageiro.cpp \
-    Viagem.cpp \
-    ControladorDeTransito.cpp \
-    -o sistema_viagens
-Observação: certifique-se de incluir -std=c++11 ou superior se precisar de recursos mais modernos.
+3. **Cadastro de Transportes**  
+   - Nome,  
+   - Tipo (`'T'` ou `'A'`),  
+   - Capacidade de passageiros,  
+   - Velocidade (km/h),  
+   - Distância entre descansos (km),  
+   - Tempo de descanso (horas),  
+   - Cidade inicial (localização atual).
+
+4. **Cadastro de Passageiros**  
+   - Nome,  
+   - Cidade onde o passageiro se encontra atualmente.
+
+5. **Gestão de Viagens**  
+   - Iniciar viagens informando:
+     - Transporte a ser utilizado,  
+     - Lista de passageiros,  
+     - Cidade de origem e destino.  
+   - Calcular o **melhor caminho** (via **Dijkstra** simples) para percorrer o trajeto desejado (com possíveis conexões).  
+   - Avançar horas para simular a viagem:
+     - Cálculo de distância percorrida.  
+     - Verificação de paradas de descanso e tempo de descanso.  
+     - Registro de chegada ao destino e cidades visitadas.
+
+6. **Relatórios**  
+   - Onde estão cada passageiro e transporte (em cidade ou em trânsito).  
+   - Quais viagens estão em andamento ou concluídas.  
+   - Cidades mais visitadas.
+
+7. **Persistência de Dados (Básica)**  
+   - Métodos para salvar e carregar dados em arquivos texto.  
+   - Fácil de expandir para salvar/carregar toda a estrutura do sistema.
+
+---
+
+## Estrutura do Projeto
+
+
+### Classes
+
+1. **Cidade**: Nome da cidade e um contador de visitas (para relatórios de popularidade).  
+2. **Trajeto**: Ligação entre duas cidades, com tipo (`'T'` ou `'A'`) e distância.  
+3. **Transporte**: Informações sobre capacidade, velocidade, paradas de descanso e cidade atual.  
+4. **Passageiro**: Nome e localização atual.  
+5. **Viagem**: Gerencia a simulação do transporte em um trajeto específico (ou em conexões).  
+6. **ControladorDeTransito**: Classe-fachada que agrega todas as entidades e gerencia suas interações (cadastro, busca, viagens, relatórios, persistência etc.).
+
+---
+
+## Como Compilar e Executar
+
+1. **Compilação via linha de comando (g++)**
+
+   ```bash
+   g++ main.cpp \
+       Cidade.cpp \
+       Trajeto.cpp \
+       Transporte.cpp \
+       Passageiro.cpp \
+       Viagem.cpp \
+       ControladorDeTransito.cpp \
+       -o sistema_viagens
+
+Observação: certifique-se de incluir -std=c++11 ou superior, se precisar de recursos mais recentes.
 
 Em seguida, rode:
 
@@ -104,10 +104,10 @@ Execute cmake . e depois make, resultando em um binário executável.
 Importante:
 
 Em ControladorDeTransito.cpp (ou onde se use std::reverse e std::sort), lembre-se de incluir o cabeçalho <algorithm> para evitar erros de compilação.
+
 Exemplo de Uso
 main.cpp (exemplo simplificado)
-cpp
-Copiar
+
 #include <iostream>
 #include "ControladorDeTransito.h"
 
